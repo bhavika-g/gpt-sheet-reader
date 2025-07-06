@@ -1,0 +1,38 @@
+openapi: 3.0.1
+info:
+  title: GPT Sheet Reader
+  description: Access Google Sheet inventory data from Luna’s inventory system.
+  version: "1.0.0"
+servers:
+  - url: https://gpt-sheet-reader.onrender.com
+
+paths:
+  /read_google_sheet:
+    get:
+      summary: Get inventory data from Google Sheet
+      parameters:
+        - name: sheet_id
+          in: query
+          required: true
+          description: The Google Sheet ID.
+          schema:
+            type: string
+        - name: worksheet
+          in: query
+          required: false
+          description: The worksheet name (default: 2.0G库存对接表Inventory detail).
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successfully retrieved data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+
