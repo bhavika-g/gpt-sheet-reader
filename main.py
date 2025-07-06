@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Response
 import gspread
 import os
 import json
@@ -36,5 +36,5 @@ def serve_openapi_yaml():
     filepath = os.path.join(os.path.dirname(__file__), "openapi.yaml")
     with open(filepath, "r", encoding="utf-8") as f:
         yaml_content = f.read()
-    return FileResponse(content=yaml_content, media_type="text/plain")
+    return Response(content=yaml_content, media_type="text/plain")
 
