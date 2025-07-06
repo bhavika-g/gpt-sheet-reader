@@ -33,5 +33,5 @@ def read_sheet(sheet_id: str, worksheet: str = "2.0G库存对接表Inventory%20d
 @app.get("/openapi.yaml", include_in_schema=False)
 def serve_openapi_yaml():
     filepath = os.path.join(os.path.dirname(__file__), "openapi.yaml")
-    return FileResponse(filepath, media_type="text/yaml")
+    return FileResponse(filepath, media_type="application/yaml")
 
