@@ -31,10 +31,10 @@ def read_sheet(sheet_id: str, worksheet: str = "2.0G库存对接表Inventory%20d
     except Exception as e:
         return {"error": str(e)}
 
-@app.get("/openapi.yaml", include_in_schema=False)
+@app.get("/openapi", include_in_schema=False)
 def serve_openapi_yaml():
     filepath = os.path.join(os.path.dirname(__file__), "openapi.yaml")
     with open(filepath, "r", encoding="utf-8") as f:
         yaml_content = f.read()
-    return Response(content=yaml_content, media_type="text/plain")
+    return Response(content=yaml_content, media_type="text/plain", headers={"Content-Disposition":"inline"})
 
