@@ -19,7 +19,7 @@ paths:
         - name: worksheet
           in: query
           required: false
-          description: The worksheet name (default: 2.0G库存对接表Inventory detail).
+          description: The worksheet name (default is 2.0G库存对接表Inventory detail).
           schema:
             type: string
       responses:
