@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: GPT Sheet Reader
   description: Access Google Sheet inventory data from Luna inventory system.
@@ -8,6 +8,7 @@ servers:
 paths:
   /read_google_sheet:
     get:
+      operationId: getGoogleSheetData
       summary: Get inventory data from Google Sheet
       parameters:
         - name: sheet_id
