@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: GPT Sheet Reader
-  description: Access Google Sheet inventory data from Luna’s inventory system.
+  description: Access Google Sheet inventory data from Luna inventory system.
   version: "1.0.0"
 servers:
   - url: https://gpt-sheet-reader.onrender.com
